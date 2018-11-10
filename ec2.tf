@@ -7,6 +7,7 @@ resource "aws_instance" "myinstance" {
   subnet_id                   = "${element(aws_subnet.subnet1.*.id,count.index)}"
   vpc_security_group_ids      = ["${aws_security_group.wu_sg.id}"]
   key_name                    = "${lookup(var.keyname,var.region)}"
+  user_data                   = "${file("userdata.sh")}"
   associate_public_ip_address = true
   depends_on                  = ["aws_security_group.wu_sg"]
 
@@ -19,6 +20,4 @@ output "Public_Instance_Public_ip" {
   value = ["${aws_instance.myinstance.*.public_ip}"]
 }
 
-output "Public_Instance_id" {
-  value = ["${aws_instance.myinstance.*.id}"]
-}
+.xxxxxxx   

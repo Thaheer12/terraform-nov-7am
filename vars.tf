@@ -46,7 +46,7 @@ variable "ami" {
 }
 
 variable "instances" {
-  default = "1"
+  default = "2"
 }
 
 variable "instances1" {

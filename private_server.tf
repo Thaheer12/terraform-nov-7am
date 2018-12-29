@@ -15,4 +15,5 @@
 # output "Private_Instance_Private_ip" {
 #   value = ["${aws_instance.privateinstance.*.private_ip}"]
 # }
+#####
 
